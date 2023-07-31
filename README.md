@@ -128,8 +128,15 @@ Similar a **$or** pero muestra los documentos que cumplan todas las condiciones 
 ```
 Muestra los documentos donde el nombre no sea igual a **Santiago** y la edad sea mayor que **20**
 # Update
-Actualizar un dato recibe como parametros la columna que se va a modificar en este caso lo hago por el **_id** y el dato que se va a enviar en el set:
+- **updateOne** recibe como parametros la columna que se va a modificar en este caso lo hago por el **_id** y el dato que se va a enviar en el set:
 ```js
 db.nombre_tabla.updateOne({_id: ObjectId("64c67c6fb06e1c6d173a1d3b")}, {$set: {nombre: "Santiago"}})
 ```
-En este caso modifico la columna con _id *"64c67c6fb06e1c6d173a1d3b"* y le cambio su nombre a Santiago
+En este caso modifico la columna con _id *"64c67c6fb06e1c6d173a1d3b"* y le cambio su nombre a Santiago.
+
+***Importante*** El updateOne solo actualiza el primer dato que encuentra con esa coincidencia.
+- **updateMany**, es muy parecido a updateOne sin embargo este actualiza todos los datos que encuentre no solo el primero. Por ejemplo:
+```js
+db.nombre_tabla.updateMany({nombre: "Angie"},{$set: {nombre: "Angi"}})
+```
+Es este caso todos las columnas con nombre: **"Angie"** serán modificadas a Angi.
