@@ -140,3 +140,14 @@ En este caso modifico la columna con _id *"64c67c6fb06e1c6d173a1d3b"* y le cambi
 db.nombre_tabla.updateMany({nombre: "Angie"},{$set: {nombre: "Angi"}})
 ```
 Es este caso todos las columnas con nombre: **"Angie"** serán modificadas a Angi.
+# Delete
+- **deleteOne** Elimina la columna con la primera coincidencia. Por ejemplo:
+```js
+db.nombre_tabla.deleteOne({nombre:  "Santiago"})
+```
+Esto eliminara el dato con el nombre **"Santiago"**
+- **deleteMany** Elimina todas las columnas con el parametro que coincide. Por ejemplo:
+```js
+db.nombre_tabla.deleteMany({nombre: "Angi"})
+```
+Esto eliminara todas las columnas cuyo nombre sea **"Angi"**
