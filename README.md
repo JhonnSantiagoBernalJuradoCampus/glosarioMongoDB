@@ -127,3 +127,9 @@ Similar a **$or** pero muestra los documentos que cumplan todas las condiciones 
 {$and: [{nombre: {$ne: "Santiago"}}, {edad: {$gt: 20}}]}
 ```
 Muestra los documentos donde el nombre no sea igual a **Santiago** y la edad sea mayor que **20**
+# Update
+Actualizar un dato recibe como parametros la columna que se va a modificar en este caso lo hago por el **_id** y el dato que se va a enviar en el set:
+```js
+db.nombre_tabla.updateOne({_id: ObjectId("64c67c6fb06e1c6d173a1d3b")}, {$set: {nombre: "Santiago"}})
+```
+En este caso modifico la columna con _id *"64c67c6fb06e1c6d173a1d3b"* y le cambio su nombre a Santiago
