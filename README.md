@@ -112,3 +112,18 @@ Comprueba el tipo del campo. Por ejemplo:
 {name: {$type: "string"}}
 ```
 Muestra los documentos donde el campo name es de tipo **string**
+# Operadores logicos
+- $or
+- $and
+## $or
+Filtra los documentos que cumplas alguna de las condiciones del array. Por ejemplo:
+```js
+{$or: [{edad: {$eq: 40}}, {edad: {$eq: 18}}]}
+```
+Muestra los documentos donde la edad sea igual a 40 o igual a 18
+## $and
+Similar a **$or** pero muestra los documentos que cumplan todas las condiciones del array y si no cumple alguna no lo muestra. Por ejemplo:
+```js
+{$and: [{nombre: {$ne: "Santiago"}}, {edad: {$gt: 20}}]}
+```
+Muestra los documentos donde el nombre no sea igual a **Santiago** y la edad sea mayor que **20**
