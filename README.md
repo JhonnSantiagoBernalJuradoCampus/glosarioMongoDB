@@ -97,3 +97,18 @@ Es la accion contraria a **$in**, devuelve los datos que **NO** esten en el arra
 {pais: {$nin: ["Colombia"]}}
 ```
 Devolvera los datos cuyo campos pais **NO** sea Colombia
+# Operadores de elemento
+- $exists
+- $type
+## $exists
+Comprueba que el campo existe. Por ejemplo:
+```js
+{genero: {$exists: true}}
+```
+Muestra los documentos donde existe un campo llamado **genero**
+## $type
+Comprueba el tipo del campo. Por ejemplo:
+```js
+{name: {$type: "string"}}
+```
+Muestra los documentos donde el campo name es de tipo **string**
